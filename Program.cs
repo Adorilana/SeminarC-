@@ -1,66 +1,36 @@
-﻿/*
-Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
-
-a = 5; b = 7 -> max = 7
-a = 2 b = 10 -> max = 10
-a = -9 b = -3 -> max = -3
+﻿/* Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
 
-Console.Write("Введите число №1: ");
-int firstNumber = Convert.ToInt32(Console.ReadLine());
+int number = new Random().Next(10,1000);
 
-Console.Write("Введите число №2: ");
-int secondNumber = Convert.ToInt32(Console.ReadLine());
+int result1 = number / 10;
+int result2 = result1 % 10;
+int result3 = result2 % 10
 
-if (firstNumber > secondNumber) 
-{
-Console.WriteLine(firstNumber);
-}
-
-else 
-{
-Console.WriteLine(secondNumber);
-}
-
-Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
-
-4 -> да
--3 -> нет
-7 -> нет
+Console.WriteLine($"Вторая цифра числа {number} - это {result2}");
 
 
-Console.Write("Введите число №1: ");
-int firstNumber = Convert.ToInt32(Console.ReadLine());
+Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
-if (firstNumber %2==0) 
-{
-Console.WriteLine(firstNumber + " является четным ");
 
-}
+string number = Console.ReadLine();
 
-else 
-{
-Console.WriteLine(firstNumber + " НЕ является четным ");
-}
+Console.WriteLine(number[2]);
 
- Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
-
-5 -> 2, 4
-8 -> 2, 4, 6, 8
+Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
 */
 
-Console.Write("Введите число N: ");
-
+Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-while (number >= 1) 
+if (number == 6 || number == 7) 
 {
-    if (number %2==0) 
-{
-Console.WriteLine(number);
+Console.WriteLine("да");
+
 }
 
-number--;
-
+else 
+{
+Console.WriteLine("нет");
 }
