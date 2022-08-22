@@ -18,6 +18,7 @@ else
 //21 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
 
+/*
 Console.Write("Введите координаты x1: ");
 int x1 = Convert.ToInt32(Console.ReadLine());
 
@@ -39,13 +40,13 @@ int z2 = Convert.ToInt32(Console.ReadLine());
 double distance = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
 
 Console.WriteLine($"Расстояние между двумя точками в пространстве равно {distance}");
-
+*/
 
 /*
 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 */
 
-/*
+
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 int start = 1;
@@ -55,4 +56,3 @@ while (start <= number)
     Console.Write(" " + result);
     start++;
 }
-*/
