@@ -1,58 +1,66 @@
-﻿/* 
-19Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+﻿/*
+25 Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 
-Console.Write("Введите пятизначное число ");
-string number = Console.ReadLine();
+int Exponentiation(int numberA, int numberB){
+  int result = 1;
+  for(int i=1; i <= numberB; i++){
+    result = result * numberA;
+  }
+    return result;
+}
 
-if (number[0] == number[4] && number[1] == number[3])
-{
-    Console.Write("число является палиндромом");
+  Console.Write("Введите число A: ");
+  int numberA = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите число B: ");
+  int numberB = Convert.ToInt32(Console.ReadLine());
+
+  int exponentiation = Exponentiation(numberA, numberB);
+  Console.WriteLine("Ответ: " + exponentiation);
+
+ 27  Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+  
+
+  Console.Write("Введите число: ");
+int numberN = Convert.ToInt32(Console.ReadLine());
+
+  int Sum(int numberN){
+    
+    int counter = Convert.ToString(numberN).Length;
+    int advance = 0;
+    int result = 0;
+
+    for (int i = 0; i < counter; i++){
+      advance = numberN - numberN % 10;
+      result = result + (numberN - advance);
+      numberN = numberN / 10;
+    }
+   return result;
+  }
+
+int sumNumber = Sum(numberN);
+Console.WriteLine("Сумма: " + sumNumber);
+
+29 Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+*/
+
+
+Console.Write("Введите восемь чисел : ");
+string? seriesOfNumbers = Console.ReadLine();
+  
+
+void PrintArry(int[] coll){
+  int count = coll.Length;
+  int index = 0;
+  Console.Write("[");
+  while(index < count){
+    Console.Write(coll[index]);
+    index++;
+    if (index < count){
+      Console.Write(", ");
+    }
+  }
+  Console.Write("]");
 } 
-else
-{
-    Console.Write("число НЕ является палиндромом");
-}
-*/
 
 
-//21 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-
-
-/*
-Console.Write("Введите координаты x1: ");
-int x1 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите координаты x2: ");
-int x2 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите координаты y1: ");
-int y1 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите координаты y2: ");
-int y2 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите координаты z1: ");
-int z1 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите координаты z2: ");
-int z2 = Convert.ToInt32(Console.ReadLine());
-
-double distance = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
-
-Console.WriteLine($"Расстояние между двумя точками в пространстве равно {distance}");
-*/
-
-/*
-Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-*/
-
-
-Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-int start = 1;
-while (start <= number)
-{
-    int result = start * start * start;
-    Console.Write(" " + result);
-    start++;
-}
+Console.WriteLine(PrintArry);
