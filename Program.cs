@@ -47,25 +47,14 @@ Console.WriteLine("Сумма: " + sumNumber);
 */
 
 
-Console.Write("Введите восемь чисел : ");
-string? seriesOfNumbers = Console.ReadLine();
-  
-
-void GetArry(int[] coll)
+int[] GetBinaryArray(int size)
 {
-  int count = coll.Length;
-  int index = 0;
-  Console.Write("[");
-  while(index < count)
-  {
-    Console.Write(coll[index]);
-    index++;
-    if (index < count){
-      Console.Write(", ");
-    }
-  }
-  Console.Write("]");
-} 
-
-
-Console.WriteLine($"массив: {GetArry}");
+int[] result = new int[size]; 
+for (int i = 0; i < result.Length; i++) 
+{
+result[i] = new Random().Next(100); 
+}
+return result;
+}
+int[] testArray = GetBinaryArray(8);
+Console.WriteLine($"Массив: [ {String.Join(", ",testArray)} ]");
