@@ -1,9 +1,11 @@
 ﻿/*
 25 Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 
-int Exponentiation(int numberA, int numberB){
+int Exponentiation(int numberA, int numberB)
+{
   int result = 1;
-  for(int i=1; i <= numberB; i++){
+  for(int i=1; i <= numberB; i++)
+  {
     result = result * numberA;
   }
     return result;
@@ -23,7 +25,8 @@ int Exponentiation(int numberA, int numberB){
   Console.Write("Введите число: ");
 int numberN = Convert.ToInt32(Console.ReadLine());
 
-  int Sum(int numberN){
+  int Sum(int numberN)
+  {
     
     int counter = Convert.ToString(numberN).Length;
     int advance = 0;
@@ -48,11 +51,13 @@ Console.Write("Введите восемь чисел : ");
 string? seriesOfNumbers = Console.ReadLine();
   
 
-void PrintArry(int[] coll){
+void GetArry(int[] coll)
+{
   int count = coll.Length;
   int index = 0;
   Console.Write("[");
-  while(index < count){
+  while(index < count)
+  {
     Console.Write(coll[index]);
     index++;
     if (index < count){
@@ -63,4 +68,4 @@ void PrintArry(int[] coll){
 } 
 
 
-Console.WriteLine(PrintArry);
+Console.WriteLine($"массив: {GetArry}");
