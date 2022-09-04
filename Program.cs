@@ -1,60 +1,102 @@
-﻿/*
-25 Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
-int Exponentiation(int numberA, int numberB)
+/*
+int[] numbers = new int[10];
+
+void FillArray(int[] array, int min, int max)
 {
-  int result = 1;
-  for(int i=1; i <= numberB; i++)
+  for (int i = 0; i<array.Length; i++ )
   {
-    result = result * numberA;
+    array[i] = new Random().Next(min, max);
   }
-    return result;
 }
 
-  Console.Write("Введите число A: ");
-  int numberA = Convert.ToInt32(Console.ReadLine());
-  Console.Write("Введите число B: ");
-  int numberB = Convert.ToInt32(Console.ReadLine());
-
-  int exponentiation = Exponentiation(numberA, numberB);
-  Console.WriteLine("Ответ: " + exponentiation);
-
- 27  Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-  
-
-  Console.Write("Введите число: ");
-int numberN = Convert.ToInt32(Console.ReadLine());
-
-  int Sum(int numberN)
-  {
-    
-    int counter = Convert.ToString(numberN).Length;
-    int advance = 0;
-    int result = 0;
-
-    for (int i = 0; i < counter; i++){
-      advance = numberN - numberN % 10;
-      result = result + (numberN - advance);
-      numberN = numberN / 10;
-    }
-   return result;
+void WriteArray(int[] array)
+{
+    for (int i = 0; i<array.Length; i++ )
+    {
+    Console.Write(array[i] + " ");
   }
+  Console.WriteLine();
+}
 
-int sumNumber = Sum(numberN);
-Console.WriteLine("Сумма: " + sumNumber);
+int QuantityPositive(int[] array)
+{
+    int quantity = 0;
+    for (int i = 0; i<array.Length; i++ )
+    {
+    if (array[i] % 2 == 1)
+    {
+      quantity++;
+    }
+  }
+  return quantity;
+}
 
-29 Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+FillArray(numbers, 100, 1000);
+WriteArray(numbers);
+Console.WriteLine();
+
+int quantity = QuantityPositive(numbers);
+Console.WriteLine($"Количество чётных чисел в массиве: {quantity}");
 */
 
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
-int[] GetBinaryArray(int size)
-{
-int[] result = new int[size]; 
-for (int i = 0; i < result.Length; i++) 
-{
-result[i] = new Random().Next(100); 
-}
-return result;
-}
-int[] testArray = GetBinaryArray(8);
-Console.WriteLine($"Массив: [ {String.Join(", ",testArray)} ]");
+/*
+Console.Write($"Введите количество элементов массива: ");
+int numberElements = Convert.ToInt32(Console.ReadLine()); 
+
+int RandomNumbers(int numberElements, int min, int max)
+  {
+  int[] randomNumbers = new int[numberElements];
+  int sumElements = 0;
+  Console.Write("массив: ");
+
+    for (int i = 0; i <randomNumbers.Length; i++ )
+    {
+      randomNumbers[i] = new Random().Next(min, max);
+
+      Console.Write(randomNumbers[i] + " ");
+
+      if (i % 2 != 1)
+      {
+        sumElements = sumElements + randomNumbers[i];
+      }
+    }
+  return sumElements;
+  }
+
+int randomNumbers =  RandomNumbers(numberElements, 1, 10);
+
+Console.WriteLine($"\nСумма элементов, стоящих на нечётных позициях: {randomNumbers}");
+*/
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+double[] arrayNumbers = new double[10];
+  for (int i = 0; i < arrayNumbers.Length; i++ )
+  {
+    arrayNumbers[i] = new Random().Next(1, 10);
+    Console.Write(arrayNumbers[i] + " ");
+  }
+
+double maxNumber = arrayNumbers[0];
+double minNumber = arrayNumbers[0];
+
+  for (int i = 1; i < arrayNumbers.Length; i++)
+  {
+    if (maxNumber < arrayNumbers[i])
+    {
+      maxNumber = arrayNumbers[i];
+    }
+        if (minNumber > arrayNumbers[i])
+    {
+      minNumber = arrayNumbers[i];
+    }
+  }
+
+  double decision = maxNumber - minNumber;
+
+  Console.WriteLine($"\nРазница между между максимальным ({maxNumber}) и минимальным({minNumber}) элементами: {decision}");
+
